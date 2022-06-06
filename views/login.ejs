@@ -1,0 +1,16 @@
+<form action="/user/handleLogin" method="post" class="login">
+    <h2>LOGIN</h2>
+    <p>Don't have an account? <a href="/register">Register here</a></p>
+
+    <%- include("./partials/msghandler") %>
+
+    <label for="name">
+        <p> Username:</p>
+        <input type="text" name="username" id="name" autofocus="true" autocomplete="true"/>
+    </label>
+    <label for="password">
+        <p> Password:</p>
+        <input type="password" name="password" id="password" autofocus="true" autocomplete="true"/>
+    </label>
+    <button type="submit">Login</button>
+</form>

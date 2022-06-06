@@ -1,0 +1,90 @@
+
+<form action="/user/handleRegister" method="post" class="login">
+
+    <div class="brand">
+        <h1>Simpz</h1>
+    </div>
+
+    <div class="indicators">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+
+
+    <div class="onboarding" id="onboarding">
+        <div class="section active">
+            <div class="texts">
+                <h2>Welcome! Create your account now</h2>
+                <p>You can always change this later</p>
+            </div>
+            <label for="username">
+                <p> Full Name:</p>
+                <input type="text" name="username" id="username" placeholder="John doe" autofocus="true" autocomplete="true"/>
+            </label>
+            <label for="email">
+                <p> Email:</p>
+                <input type="email" name="email" id="email" placeholder="Johndoe@mail.com" autocomplete="true"/>
+            </label>
+        </div>
+
+        <div class="section">
+            <div class="texts">
+                <h2>Nice! Now create a workspace</h2>
+                <p>A space to handle all your projects</p>
+            </div>
+            <label for="workspace">
+                <p> Workspace:</p>
+                <input type="text" name="workspace" id="workspace" placeholder="General" autofocus="true" autocomplete="true"/>
+            </label>
+            <select name="option">
+                <option>Public</option>
+                <option>Private</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <div class="texts">
+                <h2>Almost there! Create password</h2>
+                <p>Choose secure password for your account</p>
+            </div>
+            <label for="password">
+                <p> Password:</p>
+                <input type="password" name="password" id="password" autofocus="true" autocomplete="true"/>
+            </label>
+            <label for="cpassword">
+                <p> Confirm password:</p>
+                <input type="password" id="cpassword" autocomplete="true"/>
+            </label>
+        </div>
+
+        <div class="buttons">
+            <span>Next</span>
+            <button type="submit" id="submitButton">Submit</button>
+            <span>Back</span>
+        </div>
+    </div>
+
+
+    <script src="/script.js"></script>
+
+    <!-- get messages here
+    <label for="username">
+        <p> Username:</p>
+        <input type="username" name="username" id="username" autofocus="true" autocomplete="true"/>
+    </label>
+    <label for="email">
+        <p> Email:</p>
+        <input type="email" name="email" id="email" autofocus="true" autocomplete="true"/>
+    </label>
+    <label for="password">
+        <p> Password:</p>
+        <input type="password" name="password" id="password" autofocus="true" autocomplete="true"/>
+    </label>
+    <button type="submit">Register</button> -->
+
+
+    
+    <p>Already have an account? <a href="/login">Login here</a></p>
+</form>
