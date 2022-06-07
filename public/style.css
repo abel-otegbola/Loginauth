@@ -174,7 +174,38 @@ form.login .buttons span:nth-child(3) {
 form.login button {
     width: 100%;
 }
+.alert {
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+}
+.alert.alert-success {
+    color: rgb(134, 241, 134);
+}
+.alert.alert-danger {
+    color: rgb(238, 119, 119);
+}
 
+
+/* section styles */
+section {
+    padding: 5% 17%;
+    min-height: 40vh;
+    text-align: center;
+}
+section button {
+    border: none;
+    margin: 20px;
+}
+section button a {
+    color: #fff;
+    border-radius: 5px;
+    background-color: rgb(58, 58, 235);
+    padding: 12px 30px;
+}
+section button a:hover {
+    background-color: rgb(40, 40, 183);
+}
 
 /* footer styles */
 footer {

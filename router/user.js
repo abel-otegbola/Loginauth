@@ -50,11 +50,11 @@ router.get('/logout', (req, res, next) => {
         if (err) {
             return next(err)
         }
-        res.redirect('/')
+        req.flash('success_msg', "You are logged out")
+        res.redirect('/login')
     });
-    req.flash('success_msg', "You are logged out")
-    res.redirect('/login');
 });
+
 //User Login
 router.post("/handleLogin", (req, res, next) => {
     passport.authenticate('local', { 
@@ -68,7 +68,7 @@ router.post("/handleLogin", (req, res, next) => {
 
 passport.serializeUser(function(user, cb) {
     process.nextTick(function() {
-      cb(null, { id: user.id, user: user.name });
+      cb(null, user );
     });
 });
   
@@ -78,12 +78,7 @@ passport.deserializeUser(function(user, cb) {
     });
 });
 
-//Get user
-router.get("/getUser", (req, res) => {
-    res.send({user : user})
-})
 
-let regMsg = {}
 router.post('/handleRegister', (req, res) => 
 {//Hash password
      bcrypt.genSalt(10, (err, salt) => 
@@ -112,11 +107,11 @@ router.post('/handleRegister', (req, res) =>
                         let sql = 'INSERT INTO users SET ?';
                         let query = db.query(sql, newuser, (err) => {
                             if (err) throw err;
-                            msg = { status: "success", msg: "Registered! Please login in with username and password to continue" }
+                            req.flash('success_msg', "Registered! Please log in to continue")
                             res.redirect("/login")
                     })}
                     else {
-                        regMsg = { status: "fail", msg: "username already exists"}
+                        req.flash('error_msg', "Username already exist")
                         res.redirect("/register")
                     }
                 })
@@ -124,15 +119,12 @@ router.post('/handleRegister', (req, res) =>
                 
             }
             else {
-                regMsg = { status: "fail", msg: 'Email already registered'}
+                req.flash('error_msg', "Email already exist")
                 res.redirect("/register")
             }
         })
    })
    )
-})
-router.get("/registerStatus", (req, res) => {
-    res.json(regMsg)
 })
          
         

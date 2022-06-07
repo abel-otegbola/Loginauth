@@ -4,8 +4,13 @@
         </div>
 
         <div class="links">
-            <a href="/register">Sign in</a>
-            <a href="/login">Log in</a>
+            <% if(user) {  %>
+                <p><%=user %></p>
+            <% } else { %>
+                <a href="/register">Sign in</a>
+                <a href="/login">Log in</a>
+            <% } %>
+        
         </div>
     </nav>
 
