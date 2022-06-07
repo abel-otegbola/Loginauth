@@ -12,7 +12,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "Abel",
     password: "1234",
-    database: "users"
+    database: "simpz"
   });
   
   db.connect(function(err) {
@@ -88,6 +88,8 @@ router.post('/handleRegister', (req, res) =>
          let newuser = {
                      name: req.body.username,
                      email: req.body.email,
+                     workspace: req.body.workspace,
+                     option: req.body.option,
                      password: hash
                  }
         let findemail = `SELECT * FROM users WHERE email = '${newuser.email}'`;

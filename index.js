@@ -21,7 +21,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "Abel",
     password: "1234",
-    database: "Fute"
+    database: "simpz"
   });
   
   db.connect(function(err) {
@@ -31,7 +31,7 @@ const db = mysql.createConnection({
   
   //Create mysql database
 app.get('/createdb', (req, res) => {
-    let sql = 'CREATE DATABASE users';
+    let sql = 'CREATE DATABASE simpz';
     db.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result)
@@ -41,7 +41,7 @@ app.get('/createdb', (req, res) => {
 
 //Create mysql database table
 app.get("/createTable", (req, res) => {
-    let sql = 'CREATE TABLE users(id int AUTO_INCREMENT, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255), img VARCHAR(255), PRIMARY KEY(id))';
+    let sql = 'CREATE TABLE users(id int AUTO_INCREMENT, name VARCHAR(255), email VARCHAR(255), workspace VARCHAR(255), option VARCHAR(255), password VARCHAR(255), PRIMARY KEY(id))';
     db.query(sql, (err, result) => {
         if (err) throw err;
         res.send("Users table created")
